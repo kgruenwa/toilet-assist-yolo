@@ -1,0 +1,65 @@
+# ========================================
+# 🚫 Python & Virtual Environment
+# ========================================
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+env/
+venv/
+ENV/
+*.egg-info/
+pip-wheel-metadata/
+.eggs/
+*.pyo
+*.pyd
+
+# ========================================
+# 🚫 Mac & VS Code
+# ========================================
+.DS_Store
+.vscode/
+.idea/
+.history/
+
+# ========================================
+# 🚫 Logs & Caches
+# ========================================
+*.log
+*.tmp
+*.bak
+*.swp
+.cache/
+.ipynb_checkpoints/
+
+# ========================================
+# 🚫 YOLO / Ultralytics Outputs
+# ========================================
+runs/
+weights/
+yolo*.pt
+*.onnx
+*.engine
+*.tflite
+*.mlmodel
+*.coreml
+*.h5
+*.ckpt
+
+# ========================================
+# 🚫 Data (large datasets)
+# ========================================
+data/images/
+data/labels/
+datasets/
+exports/
+
+# ========================================
+# 🚫 Jupyter Notebook Auto Saves
+# ========================================
+*.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# ========================================
+# ✅ Allow configuration files
+!data/data.yaml
