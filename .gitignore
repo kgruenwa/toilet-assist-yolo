@@ -50,6 +50,7 @@ yolo*.pt
 # 🚫 Data (large datasets)
 # ========================================
 data/images/
+data/images_unlabeled/
 data/labels/
 datasets/
 exports/

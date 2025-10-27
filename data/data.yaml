@@ -1,0 +1,10 @@
+path: data
+train: images/train
+val: images/val
+
+names:
+  0: sink
+  1: soap_dispenser
+  2: toilet
+  3: toilet_door_open
+  4: toilet_door_closed
