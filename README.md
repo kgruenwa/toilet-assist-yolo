@@ -1,4 +1,12 @@
-# toilet-assist-yolo
+<!-- Banner -->
+<p align="center">
+  <img src="assets/banner.svg" alt="Toilet Assist YOLO – Banner" width="100%">
+</p>
+
+<!-- Logo oben rechts -->
+<img src="assets/logo.svg" alt="Projekt-Logo" width="96" align="right">
+
+# toilet-assist-yolo  
 Bachelor 2026
 
 **Toilet Assist YOLO** ist ein Computer-Vision-Projekt zur Erkennung relevanter Objekte in Sanitärräumen.  
@@ -6,7 +14,15 @@ Es basiert auf **YOLOv11 (Ultralytics)** und dient als technologische Grundlage 
 
 ---
 
-##  Ziel des Projekts
+## Inhaltsverzeichnis
+- [Ziel des Projekts](#-ziel-des-projekts)
+- [Installation](#-installation)
+- [Training starten](#-training-starten)
+- [Erkennung auf Bildern](#-erkennung-auf-bildern)
+
+---
+
+## ▸ Ziel des Projekts
 Das Modell erkennt folgende Objekte:
 
 | Klasse                 | Bedeutung                          |
@@ -18,13 +34,12 @@ Das Modell erkennt folgende Objekte:
 | `toilet_door_closed`  | WC-Kabine geschlossen               |
 
 Dies ermöglicht z. B.:
-
-- Orientierungshilfe und Assistenz für Sehbeinträchtige 
+- Orientierungshilfe und Assistenz für Sehbeeinträchtigte
 - Automatisierte Erkennung von Nutzungszuständen (Ist die Toilette besetzt?)
 
 ---
 
-##  Installation
+## ▸ Installation
 
 ```bash
 pip install ultralytics roboflow python-dotenv
