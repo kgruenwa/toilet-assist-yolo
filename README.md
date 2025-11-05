@@ -24,12 +24,31 @@ Dies ermöglicht z. B.:
 
 ---
 
-## 💾 Installation
+##  Installation
 
 ```bash
 pip install ultralytics roboflow python-dotenv
 ```
-Apple M-Pro/M-Max (ohne GPU):
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
+---
+##  Training starten
 
+```bash
+yolo detect train \
+  data=data/data.yaml \
+  model=yolo11s.pt \
+  epochs=50 \
+  imgsz=640
+```
+Das trainierte Modell wird automatisch gespeichert in:
+```bash
+runs/detect/train*/
+```
+---
+##Erkennung auf Bildern
+```bash
+yolo detect predict \
+  model="runs/detect/train*/weights/best.pt" \
+  source="docs/sample.jpg" \
+  conf=0.25
+```
