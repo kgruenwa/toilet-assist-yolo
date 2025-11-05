@@ -41,14 +41,35 @@ yolo detect train \
   imgsz=640
 ```
 Das trainierte Modell wird automatisch gespeichert in:
+
 ```bash
 runs/detect/train*/
 ```
 ---
-##Erkennung auf Bildern
+## Erkennung auf Bildern
+
 ```bash
 yolo detect predict \
   model="runs/detect/train*/weights/best.pt" \
   source="docs/sample.jpg" \
   conf=0.25
 ```
+Ausgabe inkl. Bounding Boxes:
+
+```bash
+runs/detect/predict/
+```
+Um ein anderes Bild zu testen, einfach den Dateinamen ändern:
+
+```bash
+yolo detect predict \
+  model="runs/detect/train*/weights/best.pt" \
+  source="WC_5.11.2025.jpg" \
+  conf=0.25
+```
+
+
+
+
+
+
