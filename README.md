@@ -46,7 +46,7 @@ pip install ultralytics roboflow python-dotenv
 ```
 
 ---
-##  Training starten
+## ▸ Training starten
 
 ```bash
 yolo detect train \
@@ -61,7 +61,7 @@ Das trainierte Modell wird automatisch gespeichert in:
 runs/detect/train*/
 ```
 ---
-## Erkennung auf Bildern
+## ▸ Erkennung auf Bildern
 
 ```bash
 yolo detect predict \
