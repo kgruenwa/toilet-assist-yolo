@@ -1,10 +1,10 @@
 <!-- Banner -->
 <p align="center">
-  <img src="assets/banner.svg" alt="Toilet Assist YOLO – Banner" width="100%">
+  <img src="assets/banner_yolo.png" alt="Toilet Assist YOLO – Banner" width="100%">
 </p>
 
-<!-- Logo oben rechts -->
-<img src="assets/logo.svg" alt="Projekt-Logo" width="96" align="right">
+<!-- Dein Logo oben rechts -->
+<img src="assets/ToiGuide.png" alt="Projekt-Logo" width="96" align="right">
 
 # toilet-assist-yolo  
 Bachelor 2026

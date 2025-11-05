@@ -2,7 +2,7 @@ import argparse, os, xml.etree.ElementTree as ET
 from pathlib import Path
 from PIL import Image
 
-# === Klassen-Definitionen (an XML-<name> anpassen!) ============================
+# Klassen-Definitionen --> XML Anpassen  für Yolo zum Verarbeiten 
 CLASSES = ["sink", "soap_dispenser", "toilet", "toilet_door_open", "toilet_door_closed"]
 CLASS2ID = {c: i for i, c in enumerate(CLASSES)}
 
