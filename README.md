@@ -19,26 +19,8 @@ Das Modell erkennt folgende Objekte:
 
 Dies ermöglicht z. B.:
 
-- Orientierungshilfe und Assistenz
-- Analyse von Hygienesituationen
-- Automatisierte Erkennung von Nutzungszuständen
-
----
-
-## Projektstruktur
-
-toilet-assist-yolo/
-│
-├── data/
-│ ├── images/ # Bilder für Training/Validierung
-│ ├── labels/ # YOLO-Labels (.txt)
-│ └── data.yaml # Dataset-Konfiguration
-│
-├── runs/ # YOLO-Ergebnisausgaben (Training/Predictions)
-├── docs/ # Beispielbilder, Demos
-├── src/ # Skripte & Code
-└── .env # API Keys (nicht committen!)
-
+- Orientierungshilfe und Assistenz für Sehbeinträchtige 
+- Automatisierte Erkennung von Nutzungszuständen (Ist die Toilette besetzt?)
 
 ---
 
