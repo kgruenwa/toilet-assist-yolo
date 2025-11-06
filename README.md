@@ -40,10 +40,19 @@ Dies ermöglicht z. B.:
 ---
 
 ## ▸ Installation
+### Voraussetzungen 
+Python 3.9–3.11 (getestet mit 3.9.6)
+pip & venv
 
 ```bash
-pip install ultralytics roboflow python-dotenv
+cd toilet-assist-yolo
+
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+
+pip install -r requirements.txt
 ```
+
 
 ---
 ## ▸ Training starten
@@ -54,33 +63,39 @@ yolo detect train \
   model=yolo11s.pt \
   epochs=50 \
   imgsz=640
+
 ```
-Das trainierte Modell wird automatisch gespeichert in:
+Das trainierte Modell wird automatisch gespeichert unter folgendem Ordner:
 
 ```bash
-runs/detect/train*/
+runs/detect/train*/weights/best.pt
 ```
 ---
 ## ▸ Erkennung auf Bildern
 
 ```bash
-yolo detect predict \
-  model="runs/detect/train*/weights/best.pt" \
-  source="docs/sample.jpg" \
-  conf=0.25
+yolo predict \
+  model="runs/detect/train10/weights/best.pt" \
+  source="docs" \
+  imgsz=960 \
+  conf=0.15 \
+  name=trained
 ```
-Ausgabe inkl. Bounding Boxes:
-
+Ergebnisse werden in folgenden Ordnern angezeigt: 
 ```bash
-runs/detect/predict/
+runs/detect/trained/
 ```
-Um ein anderes Bild zu testen, einfach den Dateinamen ändern:
-
+Vergleich mit dem Basis Modell:
 ```bash
-yolo detect predict \
-  model="runs/detect/train*/weights/best.pt" \
-  source="WC_5.11.2025.jpg" \
-  conf=0.25
+./compare.sh
+
+```
+Ergebnisse werden in folgenden Ordnern angezeigt: 
+```bash
+runs/detect/trained/
+runs/detect/base/
+
+
 ```
 
 
