@@ -2,6 +2,7 @@
 # 🚫 Python & Virtual Environment
 # ========================================
 __pycache__/
+.env
 *.py[cod]
 *.so
 .venv/
