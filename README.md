@@ -98,6 +98,22 @@ runs/detect/base/
 
 ```
 
+## ▸ Livestream starten 
+
+Der Livestream zeigt die Live-Kamera mit Erkennungen aus zwei Modellen:
+Basis-Modell (YOLO11s) → erkennt sink & toilet
+Custom-Modell → erkennt soap_dispenser, toilet_door_open, toilet_door_closed
+
+1. Virtuelle Umgebung aktivieren (falls noch nicht aktiv)
+```bash
+source .venv/bin/activate
+```
+2. Livestream starten
+```bash
+python src/dual_model_webcam.py
+```
+3.  Livestream starten
+einfach die ESC taste drücken 
 
 
 
