@@ -112,7 +112,7 @@ source .venv/bin/activate
 ```bash
 python src/dual_model_webcam.py
 ```
-3.  Livestream starten
+3.  Livestream beenden
 einfach die ESC taste drücken 
 
 
