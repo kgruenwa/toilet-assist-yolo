@@ -115,7 +115,45 @@ python src/dual_model_webcam.py
 3.  Livestream beenden
 einfach die ESC taste drücken 
 
+## Swift App starten
+Die Swift App befindet sich im Ordner:
+```bash
+Swift_app/toilet-assist-yolo
+```
+Die App nutzt die iPhone-Kamera und CoreML-Modelle, um Objekte direkt auf dem Gerät zu erkennen.
 
+### 1. Projekt in Xcode öffnen
+Im Ordner Swift_app/toilet-assist-yolo die Xcode-Projektdatei öffnen:
+```bash
+toilet-assist-yolo.xcodeproj
+```
+### 2. Signing einstellen
+In Xcode:
+- Projekt auswählen
+- App-Target auswählen
+- Signing & Capabilities öffnen
+- bei Team das eigene Apple-Konto auswählen
+Der Bundle Identifier muss eindeutig sein, zum Beispiel:
+```bash
+com.katharina.toiletassist
+```
+### 3. Modelle prüfen
+Die CoreML-Modelle müssen im Xcode-Projekt eingebunden sein.
+Wichtig ist:
+
+- Modell im Projekt anklicken
+- rechts im File Inspector schauen
+- bei Target Membership muss die App angehakt sein
+
+### 4. App starten
+Oben in Xcode ein Gerät auswählen, zum Beispiel:
+- iPhone Simulator
+- eigenes iPhone
+Dann auf den Play-Button drücken.
+Die App startet und zeigt die Kameraansicht mit Objekterkennung.
+### 5. Hinweis
+Falls Xcode nach Kamera-Berechtigung fragt, muss diese erlaubt werden.
+Ohne Kamera-Zugriff kann die App keine Objekte erkennen.
 
 
 
