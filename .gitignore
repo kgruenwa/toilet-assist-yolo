@@ -65,3 +65,5 @@ notebooks/.ipynb_checkpoints/
 # ========================================
 # ✅ Allow configuration files
 !data/data.yaml
+*.mov
+*.mov

@@ -1,0 +1,4 @@
+1. Wenn Toilette sichtbar → Toilette als Ziel nehmen
+2. Sonst wenn Waschbecken sichtbar → Waschbecken als Orientierungspunkt
+3. Sonst wenn Seifenspender sichtbar → Waschbereich als Hinweis
+4. Sonst wenn Tür sichtbar → Richtung Tür suchen
