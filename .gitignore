@@ -51,10 +51,15 @@ yolo*.pt
 # 🚫 Data (large datasets)
 # ========================================
 data/images/
+data/new_images/
 data/images_unlabeled/
 data/labels/
 datasets/
 exports/
+data/backup_old_split
+data/all_labeled
+data/backup_before_roboflow_export
+data/new_labels
 
 # ========================================
 # 🚫 Jupyter Notebook Auto Saves

@@ -22,12 +22,21 @@ NORMALIZE = {
     "door_closed": "toilet_door_closed",
     "toilet-door-open": "toilet_door_open",
     "toilet-door-closed": "toilet_door_closed",
+    "flush_button": "flush",
+    "flush-handle": "flush",
+    "flush_handle": "flush",
+    "spuelung": "flush",
+    "spülung": "flush",
 }
 
-# Aus dem Basis-Modell möchten wir nur diese Objektklassen verwenden:
-USE_FROM_BASE   = {"sink", "toilet"}
-# Aus dem Custom-Modell möchten wir nur diese Klassen übernehmen:
-USE_FROM_CUSTOM = {"soap_dispenser", "toilet_door_open", "toilet_door_closed"}
+USE_FROM_BASE = {"sink", "toilet"}
+
+USE_FROM_CUSTOM = {
+    "soap_dispenser",
+    "toilet_door_open",
+    "toilet_door_closed",
+    "flush"
+}
 
 #alle Labels in eine Satndartform wie in Normalize angegeben bringen: 
 def to_canonical(name: str) -> str:

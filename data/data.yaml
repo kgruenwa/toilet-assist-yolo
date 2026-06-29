@@ -1,6 +1,6 @@
-path: data
-train: images/train
-val: images/val
+path: .
+train: data/images/train
+val: data/images/val
 
 names:
   0: sink
@@ -8,3 +8,4 @@ names:
   2: toilet
   3: toilet_door_open
   4: toilet_door_closed
+  5: flush

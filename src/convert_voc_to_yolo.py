@@ -3,7 +3,7 @@ from pathlib import Path
 from PIL import Image
 
 # Klassen-Definitionen --> XML Anpassen  für Yolo zum Verarbeiten 
-CLASSES = ["sink", "soap_dispenser", "toilet", "toilet_door_open", "toilet_door_closed"]
+CLASSES = ["sink", "soap_dispenser", "toilet", "toilet_door_open", "toilet_door_closed", "flush"]
 CLASS2ID = {c: i for i, c in enumerate(CLASSES)}
 
 ALIASES = {
@@ -17,6 +17,7 @@ ALIASES = {
     "door_closed": "toilet_door_closed",
     "toilet-door-open": "toilet_door_open",
     "toilet-door-closed": "toilet_door_closed",
+    "flush":"flush",
 }
 
 SKIP_DIFFICULT = True  
