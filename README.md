@@ -25,17 +25,21 @@ Es basiert auf **YOLOv11 (Ultralytics)** und dient als technologische Grundlage 
 ## ▸ Ziel des Projekts
 Das Modell erkennt folgende Objekte:
 
-| Klasse                 | Bedeutung                          |
-|-----------------------|-------------------------------------|
-| `sink`                | Waschbecken                         |
-| `soap_dispenser`      | Seifenspender                       |
-| `toilet`              | Toilette                            |
-| `toilet_door_open`    | WC-Kabine geöffnet                  |
-| `toilet_door_closed`  | WC-Kabine geschlossen               |
+| Klasse           | Bedeutung      |
+|------------------|----------------|
+| `toilet`         | Toilette       |
+| `flush`          | Spülung        |
+| `sink`           | Waschbecken    |
+| `soap_dispenser` | Seifenspender  |
+
+Die aktuelle App-Version konzentriert sich auf eine schrittweise Orientierung innerhalb des Sanitärraums. 
+Die erkannten Zielobjekte werden nacheinander gesucht: Toilette, Spülung, Waschbecken und Seifenspender.
 
 Dies ermöglicht z. B.:
-- Orientierungshilfe und Assistenz für Sehbeeinträchtigte
-- Automatisierte Erkennung von Nutzungszuständen (Ist die Toilette besetzt?)
+- schrittweise Orientierungshilfe für blinde und sehbeeinträchtigte Personen
+- sprachbasierte Rückmeldung zur Position erkannter Objekte
+- zusätzliche akustische Unterstützung über Richtungstöne
+- prototypische Umsetzung einer Smartphone-basierten Assistenz im Sanitärraum
 
 ---
 
@@ -100,20 +104,13 @@ runs/detect/base/
 
 ## ▸ Livestream starten 
 
-Der Livestream zeigt die Live-Kamera mit Erkennungen aus zwei Modellen:
-Basis-Modell (YOLO11s) → erkennt sink & toilet
-Custom-Modell → erkennt soap_dispenser, toilet_door_open, toilet_door_closed
+Der Livestream zeigt die Live-Kamera mit Objekterkennungen des trainierten Modells.
 
-1. Virtuelle Umgebung aktivieren (falls noch nicht aktiv)
-```bash
-source .venv/bin/activate
-```
-2. Livestream starten
-```bash
-python src/dual_model_webcam.py
-```
-3.  Livestream beenden
-einfach die ESC taste drücken 
+Aktuell relevante Klassen:
+- `toilet`
+- `flush`
+- `sink`
+- `soap_dispenser`
 
 ## Swift App starten
 Die Swift App befindet sich im Ordner:
@@ -121,6 +118,11 @@ Die Swift App befindet sich im Ordner:
 Swift_app/toilet-assist-yolo
 ```
 Die App nutzt die iPhone-Kamera und CoreML-Modelle, um Objekte direkt auf dem Gerät zu erkennen.
+
+Die App führt Nutzer*innen schrittweise durch den Ablauf. 
+Pro Schritt wird nur das jeweils relevante Zielobjekt gesucht. 
+Die Rückmeldung erfolgt über Sprachausgabe, z. B. zur Richtung des erkannten Objekts. 
+Zusätzlich können akustische Richtungssignale aktiviert oder deaktiviert werden.
 
 ### 1. Projekt in Xcode öffnen
 Im Ordner Swift_app/toilet-assist-yolo die Xcode-Projektdatei öffnen:
