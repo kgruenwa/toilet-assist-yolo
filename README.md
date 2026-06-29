@@ -19,6 +19,8 @@ Es basiert auf **YOLOv11 (Ultralytics)** und dient als technologische Grundlage 
 - [Installation](#-installation)
 - [Training starten](#-training-starten)
 - [Erkennung auf Bildern](#-erkennung-auf-bildern)
+- [Livestream starten](#-livestream-starten)
+- [Swift App starten](#swift-app-starten)
 
 ---
 
@@ -112,50 +114,99 @@ Aktuell relevante Klassen:
 - `sink`
 - `soap_dispenser`
 
-## Swift App starten
+### Livestream ausführen
+
+Virtuelle Umgebung aktivieren:
+
+```bash
+source .venv/bin/activate
+```
+
+Livestream starten:
+
+```bash
+python src/dual_model_webcam.py
+```
+
+Livestream beenden:
+
+```bash
+ESC drücken
+```
+
+> Hinweis: Falls ein anderes Skript für den Livestream verwendet wird, muss der Dateiname entsprechend angepasst werden.
+
+---
+
+## ▸ Swift App starten
+
 Die Swift App befindet sich im Ordner:
+
 ```bash
 Swift_app/toilet-assist-yolo
 ```
-Die App nutzt die iPhone-Kamera und CoreML-Modelle, um Objekte direkt auf dem Gerät zu erkennen.
 
-Die App führt Nutzer*innen schrittweise durch den Ablauf. 
-Pro Schritt wird nur das jeweils relevante Zielobjekt gesucht. 
-Die Rückmeldung erfolgt über Sprachausgabe, z. B. zur Richtung des erkannten Objekts. 
-Zusätzlich können akustische Richtungssignale aktiviert oder deaktiviert werden.
+Die App nutzt die iPhone-Kamera und ein CoreML-Modell, um Objekte direkt auf dem Gerät zu erkennen.
+
+Die App führt Nutzer*innen schrittweise durch den Ablauf. Pro Schritt wird nur das jeweils relevante Zielobjekt gesucht. Die aktuelle Reihenfolge ist:
+
+1. Toilette finden
+2. Spülung finden
+3. Waschbecken finden
+4. Seifenspender finden
+
+Die Rückmeldung erfolgt über Sprachausgabe, z. B. zur Richtung des erkannten Objekts. Zusätzlich können akustische Richtungssignale aktiviert oder deaktiviert werden. Die Sprachausgabe bleibt dabei weiterhin aktiv.
 
 ### 1. Projekt in Xcode öffnen
-Im Ordner Swift_app/toilet-assist-yolo die Xcode-Projektdatei öffnen:
+
+Im Ordner `Swift_app/toilet-assist-yolo` die Xcode-Projektdatei öffnen:
+
 ```bash
 toilet-assist-yolo.xcodeproj
 ```
+
 ### 2. Signing einstellen
+
 In Xcode:
+
 - Projekt auswählen
 - App-Target auswählen
-- Signing & Capabilities öffnen
-- bei Team das eigene Apple-Konto auswählen
+- `Signing & Capabilities` öffnen
+- bei `Team` das eigene Apple-Konto auswählen
+
 Der Bundle Identifier muss eindeutig sein, zum Beispiel:
+
 ```bash
 com.katharina.toiletassist
 ```
-### 3. Modelle prüfen
-Die CoreML-Modelle müssen im Xcode-Projekt eingebunden sein.
+
+### 3. Modell prüfen
+
+Das CoreML-Modell muss im Xcode-Projekt eingebunden sein.
+
 Wichtig ist:
 
 - Modell im Projekt anklicken
-- rechts im File Inspector schauen
-- bei Target Membership muss die App angehakt sein
+- rechts im File Inspector prüfen
+- bei `Target Membership` muss die App angehakt sein
+
+Das aktuell im Swift-Code verwendete Modell heißt:
+
+```swift
+bestnewversion
+```
+
+Falls das Modell in Xcode anders heißt, muss der Modellname im `CameraViewModel` angepasst werden.
 
 ### 4. App starten
-Oben in Xcode ein Gerät auswählen, zum Beispiel:
-- iPhone Simulator
-- eigenes iPhone
-Dann auf den Play-Button drücken.
+
+Oben in Xcode ein eigenes iPhone als Gerät auswählen und auf den Play-Button drücken.
+
+Der iPhone Simulator eignet sich nur eingeschränkt, da die App eine echte Kamera benötigt.
+
 Die App startet und zeigt die Kameraansicht mit Objekterkennung.
+
 ### 5. Hinweis
-Falls Xcode nach Kamera-Berechtigung fragt, muss diese erlaubt werden.
-Ohne Kamera-Zugriff kann die App keine Objekte erkennen.
 
-
+Falls iOS nach Kamera-Berechtigung fragt, muss diese erlaubt werden. Ohne Kamera-Zugriff kann die App keine Objekte erkennen.
 
