@@ -36,13 +36,13 @@ final class SingleModelDetector {
         case "toilet":
             return 0.55
         case "sink":
-            return 0.30
+            return 0.40
         case "soap_dispenser":
-            return 0.20
-        case "toilet_door_open", "toilet_door_closed":
-            return 0.20
-        default:
+            return 0.35
+        case "flush":
             return 0.30
+        default:
+            return 0.35
         }
     }
 
@@ -82,9 +82,21 @@ final class SingleModelDetector {
 
                 // Schutz gegen kleine Fehlklassifikationen bei Toilette.
                 // Kann später entfernt werden, wenn dein eigenes Modell besser trainiert ist.
-                if canonical == "toilet" {
-                    let boxArea = obs.boundingBox.width * obs.boundingBox.height
+                let boxArea = obs.boundingBox.width * obs.boundingBox.height
+
+                switch canonical {
+                case "toilet":
                     guard boxArea > 0.04 else { return nil }
+                case "sink":
+                    guard boxArea > 0.025 else { return nil }
+                case "soap_dispenser":
+                    guard boxArea > 0.008 else { return nil }
+                case "toilet_door_open", "toilet_door_closed":
+                    guard boxArea > 0.03 else { return nil }
+                case "flush":
+                    guard boxArea > 0.004 else { return nil }
+                default:
+                    break
                 }
 
                 return Detection(
@@ -94,7 +106,8 @@ final class SingleModelDetector {
                 )
             }
 
-            completion(detections)
+            let filteredDetections = DetectionMath.nms(detections, iouThreshold: 0.45)
+            completion(filteredDetections)
         }
 
         // scaleFill passt zum PreviewLayer resizeAspectFill.

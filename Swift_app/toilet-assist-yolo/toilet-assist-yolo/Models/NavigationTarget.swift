@@ -14,23 +14,20 @@ enum NavigationTarget: String, CaseIterable, Identifiable {
     case toilet = "Toilette"
     case sink = "Waschbecken"
     case soap = "Seifenspender"
-    case door = "Tür"
-
+    
     var id: String { rawValue }
-
+    
     // Labels, die zu diesem Navigationsziel gehören.
     var labels: Set<String> {
         switch self {
         case .automatic:
-            return ["toilet", "sink", "soap_dispenser", "toilet_door_open", "toilet_door_closed"]
+            return ["toilet", "sink", "soap_dispenser"]
         case .toilet:
             return ["toilet"]
         case .sink:
             return ["sink"]
         case .soap:
             return ["soap_dispenser"]
-        case .door:
-            return ["toilet_door_open", "toilet_door_closed"]
         }
     }
 }

@@ -18,10 +18,6 @@ enum LabelNormalizer {
         "toilet_bowl": "toilet",
         "soap-dispenser": "soap_dispenser",
         "soap": "soap_dispenser",
-        "door_open": "toilet_door_open",
-        "door_closed": "toilet_door_closed",
-        "toilet-door-open": "toilet_door_open",
-        "toilet-door-closed": "toilet_door_closed"
     ]
 
     static func canonical(_ name: String) -> String {
